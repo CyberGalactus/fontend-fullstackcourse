@@ -1,5 +1,6 @@
 import { ActionFunctionArgs, Form, redirect, useActionData } from "react-router-dom"
-import classes from './SignUp.module.css';
+import classes from './SignIn.module.css';
+import auth from "../lib/auth";
 import { ActionData } from "../types";
 
 export const action = async (args: ActionFunctionArgs) => {
@@ -9,19 +10,13 @@ export const action = async (args: ActionFunctionArgs) => {
 
     const username = formData.get('username');
     const password = formData.get('password');
-    const invite = formData.get('invite');
-    const passwordConfirmation = formData.get('password_confirmation');
 
-    if (password !== passwordConfirmation) {
-        return { message: 'Passwords don\'t match' };
-    }
-
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/register', {
+    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/login', {
         headers: {
             'Content-Type': 'application/json',
         },
         method: 'POST',
-        body: JSON.stringify({username, password, invite})
+        body: JSON.stringify({username, password})
     })
 
     if (!response.ok) {
@@ -30,14 +25,18 @@ export const action = async (args: ActionFunctionArgs) => {
         return { message };
     }
 
-    return redirect('/sign-in');
+    const { token } = await response.json();
+    auth.signIn(token);
+
+    return redirect('/');
 }
 
-const SignUp = () => {
+const SignIn = () => {
     const error = useActionData() as ActionData;
+    
     return (
         <div className={classes.signupForm}>
-            <h2>Create a new account</h2>
+            <h2>Sign in to Changedit</h2>
             <Form method="post">
                 { error && <p><b>Error:</b> {error.message}</p> }
   
@@ -49,20 +48,12 @@ const SignUp = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" id="password" required />
                 </div>
-                <div className={classes.formGroup}>
-                    <label htmlFor="password_confirmation">Password confirmation</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" required />
-                </div>
-                <div className={classes.formGroup}>
-                    <label htmlFor="invitetoken">invite </label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" required />
-                </div>
                 <div>
-                    <button type="submit">Create user</button>
+                    <button type="submit">Sign in</button>
                 </div>
             </Form>
         </div>
     )
 }
 
-export default SignUp;
+export default SignIn;

@@ -1,4 +1,4 @@
-const SignIn = (jwt: string) => {
+const signIn = (jwt: string) => {
     localStorage.setItem('jwt', jwt);
 }
 
@@ -6,11 +6,11 @@ const isSignedIn = () => !!localStorage.getItem('jwt');
 
 const getJWT = () => localStorage.getItem('jwt');
 
-const SignOut = () => localStorage.clear();
+const signOut = () => localStorage.removeItem('jwt');
 
 export default {
-    SignIn,
+    signIn,
+    signOut,
     isSignedIn,
-    getJWT,
-    SignOut
-};
+    getJWT
+}
