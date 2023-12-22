@@ -1,15 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom'
-import Index, { loader as indexLoader } from './routes/index.tsx'
-import SignUp, { action as signUpAction } from './routes/SignUp.tsx'
-import SignIn, { action as signInAction } from './routes/SignIn.tsx'
-import auth from './lib/auth.ts'
-import CreatePost, { action as createPostAction } from './routes/CreatePost.tsx'
-import RequireAuth from './components/RequiereAuth.tsx'
-import ShowPost, { loader as showPostLoader } from './routes/ShowPost.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import './index.css';
+import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
+import Index, { loader as indexLoader } from './routes/Index.tsx';
+import SignUp, { action as signUpAction } from './routes/SignUp.tsx';
+import SignIn, { action as signInAction } from './routes/SignIn.tsx';
+import auth from './lib/auth.ts';
+import CreatePost from './routes/CreatePost.tsx';
+import { action as createPostAction } from './routes/CreatePost.actions.ts';
+import RequireAuth from './components/RequiereAuth.tsx';
+import ShowPost, { loader as showPostLoader } from './routes/ShowPost.tsx';
+import { action as createCommentAction } from './components/CommentForm.tsx';
+import { action as voteAction } from './components/Vote.tsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +54,14 @@ const router = createBrowserRouter([
             action: createPostAction,
             element: <CreatePost />
           },
+          {
+            path: "/posts/:postId/comments",
+            action: createCommentAction
+          },
+          {
+            path: "/posts/:postId/vote",
+            action: voteAction
+          }
         ]
       },
     ]
