@@ -6,7 +6,7 @@ const isSignedIn = () => !!localStorage.getItem('jwt');
 
 const getJWT = () => localStorage.getItem('jwt');
 
-const signOut = () => localStorage.removeItem('jwt');
+const signOut = () => localStorage.clear();
 
 export default {
     signIn,
