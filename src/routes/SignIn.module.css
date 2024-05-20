@@ -1,25 +1,25 @@
-.signup-form {
+.signupForm {
     width: 300px;
     border: 2px solid black;
     padding: 20px;
     margin-top: 20px;
 }
 
-.signup-form h2 {
+.signupForm h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.form-group {
+.formGroup {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.formGroup label {
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input {
+.formGroup input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -27,7 +27,7 @@
     box-sizing: border-box;
 }
 
-.form-group button {
+.formGroup button {
     width: 100%;
     padding: 10px;
     background-color: black;

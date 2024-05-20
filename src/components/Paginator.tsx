@@ -15,7 +15,7 @@ const Paginator = (prop: PaginatorProps) => {
 
     // Två sätt att skapa en array some ser ut så: [1, 2, 3, 4...]
 
-    return (<div className={classes.pagination}>
+    return ( <div className={classes.pagination}>
         {pages.map(page => (
             <button key={page} className={page == prop.currentPage ? classes.active : ''} onClick={() => prop.setPage(page)}>
                 {page}

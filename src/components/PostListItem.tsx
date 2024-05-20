@@ -8,7 +8,7 @@ const PostListItem = ({ post }: { post: Post }) => {
     <div className={classes.post}>
       <VoteComponent post={post} />
       <div className={classes.postInfo}>
-        { post.link ? (
+        {post.link ? (
           <Link to={post.link}>
             <h2>{post.title}<span className={classes.postUrl}>({post.link})</span></h2>
           </Link>

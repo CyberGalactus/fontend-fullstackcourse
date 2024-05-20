@@ -8,7 +8,7 @@ const CreatePost = () => {
     return (
         <div className={classes.createPostForm}>
             <h2>Create post</h2>
-            <Form method="post">
+            <Form method="post" encType="multipart/form-data">
                 {error && <p><b>Error:</b> {error.message}</p>}
 
                 <div className={classes.formGroup}>

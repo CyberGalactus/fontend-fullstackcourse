@@ -15,11 +15,11 @@
     margin: 0;
 }
 
-.header-actions {
+.headerActions {
     display: flex;
     align-items: center;
 }
 
-.header-actions button {
+.headerActions button {
     margin-left: 10px;
 }

@@ -1,26 +1,26 @@
-.comment-form h3,
+.commentForm h3,
 .comments h3 {
     margin-top: 0px;
 }
 
-.comment-form {
+.commentForm {
     padding-bottom: 20px;
 }
 
-.form-group {
+.formGroup {
     margin-bottom: 15px;
 }
 
-.form-group:last-of-type {
+.formGroup:last-of-type {
     margin-bottom: 0;
 }
 
-.form-group label {
+.formGroup label {
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group textarea {
+.formGroup textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -29,7 +29,7 @@
     box-sizing: border-box;
 }
 
-.form-group button {
+.formGroup button {
     width: 100%;
     padding: 10px;
     background-color: black;
