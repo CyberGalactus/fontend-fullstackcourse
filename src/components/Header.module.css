@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px;
     border-bottom: 2px solid black;
+    background-color: orange;
 }
 
 .header a {
@@ -22,4 +23,8 @@
 
 .headerActions button {
     margin-left: 10px;
+    color: green;
+    border: 2px solid green;
+    border-radius: 6px;
+    background-color: transparent;
 }

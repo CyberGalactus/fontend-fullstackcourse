@@ -16,27 +16,27 @@
     margin-bottom: 5px;
 }
 
-.post-info h2 {
+.postInfo h2 {
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.post-url {
+.postUrl {
     font-size: small;
     color: #555;
     margin-left: 10px;
 }
 
-.post-info p {
+.postInfo p {
     margin: 5px 0;
 }
 
-.post-info a {
+.postInfo a {
     text-decoration: none;
 }
 
-.post-info span {
+.postInfo span {
     font-weight: bold;
 }
