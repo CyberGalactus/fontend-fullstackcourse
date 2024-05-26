@@ -28,9 +28,9 @@ const ShowPost = () => {
         <VoteComponent post={post} />
         <div className={classes.postInfo}>
           { post.link ? (
-            <Link to={post.link}>
+            
               <h2>{post.title}<span className={classes.postUrl}>({post.link})</span></h2>
-            </Link>
+            
           ) : (
             <h2>{post.title}</h2>
           )}
@@ -44,6 +44,7 @@ const ShowPost = () => {
       </div>
       <CommentForm postId={post._id} />
       { post.comments?.map(comment => <CommentComponent key={comment._id} comment={comment} />) }
+      
     </>
   );
 }

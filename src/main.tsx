@@ -8,11 +8,14 @@ import SignUp, { action as signUpAction } from './routes/SignUp.tsx';
 import SignIn, { action as signInAction } from './routes/SignIn.tsx';
 import auth from './lib/auth.ts';
 import CreatePost from './routes/CreatePost.tsx';
-import { action as createPostAction } from './routes/CreatePost.actions.ts';
 import RequireAuth from './components/RequiereAuth.tsx';
 import ShowPost, { loader as showPostLoader } from './routes/ShowPost.tsx';
 import { action as createCommentAction } from './components/CommentForm.tsx';
+import { action as createPostAction } from './routes/CreatePost.actions.ts';
 import { action as voteAction } from './components/Vote.tsx';
+// import { action as deleteCommentsAction } from './components/DeleteComponents.tsx'
+// import { action as deletePostAction } from './components/DeletePost.tsx'
+// import UpdatePost, { action as updatePostAction } from "./routes/UpdatePost.tsx";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +64,21 @@ const router = createBrowserRouter([
           {
             path: "/posts/:postId/vote",
             action: voteAction
-          }
+          },
+          // {
+          //   path: '/posts/:postId/comments/:commentId/delete-comment',
+          //   action: deleteCommentsAction
+          // },
+          // {
+          //   path: "/posts/:postId/delete-post",
+          //   action: deletePostAction
+          // },
+          // {
+          //   path: '/posts/:id/update',
+          //   action: updatePostAction,
+          //   element: <UpdatePost />
+          // }
+          
         ]
       },
     ]

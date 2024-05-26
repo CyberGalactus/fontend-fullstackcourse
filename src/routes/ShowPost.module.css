@@ -18,6 +18,16 @@
 
 .postInfo h2 {
     margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.postUrl {
+    font-size: small;
+    color: #555;
+    margin-left: 10px;
 }
 
 .postInfo p {
@@ -26,7 +36,6 @@
 
 .postInfo span,
 .postBody {
-    display: block;
     margin-top: 10px;
 }
 
