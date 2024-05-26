@@ -1,4 +1,4 @@
-import { Link, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
+import {  LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { Post } from "../types";
 import classes from './ShowPost.module.css';
 import CommentForm from "../components/CommentForm";
